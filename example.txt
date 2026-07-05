@@ -1,0 +1,90 @@
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<!-- Tab content -->
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+switching code
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+JSON 
+{
+  "player": {
+    "hp": 50,
+    "inventory": ["Sword", "Potion"],
+    "settings": { "difficulty": "Normal" }
+  }
+}
+
+
+
+let data;
+
+fetch('data.json')
+  .then(r => r.json())
+  .then(json => {
+    data = json;
+    switchTab('stats');
+  });
+function renderStats() {
+  const p = data.player;
+  content.innerHTML = `
+    <h2>Stats</h2>
+    <p>HP: ${p.hp}</p>
+    <button onclick="heal()">Heal +10</button>
+  `;
+}
+
+function heal() {
+  data.player.hp += 10;
+  renderStats(); // re-render
+}
+
+function renderInventory() {
+  const items = data.player.inventory;
+  content.innerHTML = `
+    <h2>Inventory</h2>
+    <ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>
+    <button onclick="addItem()">Add Item</button>
+  `;
+}
+
+function addItem() {
+  data.player.inventory.push("New Item");
+  renderInventory();
+}
