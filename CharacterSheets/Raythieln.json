@@ -1,0 +1,16 @@
+stats = [HP:
+        Str:
+        Dex:
+        Con:
+        Int:
+        Wis:
+        Cha:]
+
+savesBases = [Fort:
+                Ref:
+                Will:
+                Bab:]
+
+skill ranks[]
+
+skill bonuses = [ [+2,All,Luck], [+3,Perception, insight]]
