@@ -4,6 +4,11 @@ export const Static = [
                 value: 11
         },
         {
+          name: "HP",
+          value: 165,
+
+        },
+        {
                 name: "BAB",
                 value: 11
         },
@@ -14,11 +19,7 @@ export const Static = [
 ]
 
 export const baseStats = [
-  {
-    name: "HP",
-    value: 165,
-    categories: ["cat1", "cat2"]
-  },
+
   {
     name: "Str",
     value: 20,
