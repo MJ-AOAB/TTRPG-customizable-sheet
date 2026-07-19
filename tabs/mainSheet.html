@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <script src="/CharacterSheets/data.js"></script>
+    <!-- <script src="/CharacterSheets/data.js"></script> -->
     </head>
     <body>
         <div>
-            <ul>
-                
-            </ul>
+            <div id="section-static"></div>
+            
+            <div id="section-ability"></div>
+
+            <div id="section-saves"></div>
+
+            <div id="section-skills"></div>
+            
+            <!-- <div id="section-attacks"></div> -->
+
         </div>
     </body>
 
     <script>
+
+const StaticList = document.getElementById("section-static");
+
+function renderMainSheet() {
+    const StaticList = document.getElementById("section-static");
+
+    for (let key in stats) {
+        const stat = stats[key];
+
+        if (stat.categories && stat.categories.includes("Static")) {
+            const display = document.createElement("p");
+            display.textContent = `${key}: ${stat.base}`;
+            StaticList.appendChild(display);
+        }
+    }
+}
 
     </script>
 </html>

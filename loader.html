@@ -5,8 +5,9 @@
 <title>Character sheet</title>
 <link rel="stylesheet" href="loader.css">
 <script src="/CharacterSheets/data.js"></script>
-<script src="/resourceLoaders/initCalc.js"></script>
 <script src="/resourceLoaders/initLoad.js"></script>
+<script src="/resourceLoaders/initCalc.js"></script>
+
 
 </head>
 
@@ -64,11 +65,15 @@ function openTab(evt, Tab) {
   evt.currentTarget.className += " active";
 
   // Load external HTML for each tab
-  if (Tab === "Main") {
-    fetch("/tabs/mainSheet.html")
-      .then(r => r.text())
-      .then(t => document.getElementById("MainContent").innerHTML = t);
-  }
+if (Tab === "Main") {
+  fetch("/tabs/mainSheet.html")
+    .then(r => r.text())
+    .then(t => {
+      document.getElementById("MainContent").innerHTML = t;
+      renderMainSheet();   // ← run renderer AFTER HTML loads
+    });
+}
+
 
   if (Tab === "Equipment") {
     fetch("/tabs/equipment.html")
@@ -89,7 +94,22 @@ function openTab(evt, Tab) {
 }
 
 // Auto-open default tab
+function renderMainSheet() {
+    const StaticList = document.getElementById("section-static");
+
+    for (let key in stats) {
+        const stat = stats[key];
+
+        if (stat.categories && stat.categories.includes("Static")) {
+            const display = document.createElement("p");
+            display.textContent = `${key}: ${stat.base}`;
+            StaticList.appendChild(display);
+        }
+    }
+}
+
 document.getElementById("defaultOpen").click();
+
 </script>
 
 </body>
