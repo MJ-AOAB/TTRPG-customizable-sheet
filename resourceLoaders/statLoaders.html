@@ -4,9 +4,9 @@ function createHealth(HD,DT, Con, FCB, categories = [], Toughness) {
     HD: HD,
     DT: DT, 
     Con: Con,
-    FCB: FCB  // e.g. ["skill", "charisma_skill"]
+    FCB: FCB,  // e.g. ["skill", "charisma_skill"]
     categories: categories, 
-    Toughness: true
+    Toughness: Toughness
     
   };
 }
@@ -16,7 +16,7 @@ function createAC(name, baseValue = 0, categories = []) {
     base: baseValue,
     categories: categories,   // e.g. ["skill", "charisma_skill"]
     bonuses: {
-      morale: [],
+      morale: [],    // internal classification  [bonus amount, duration, id]
       luck: [],
       armor: [],
       shield: [],

@@ -1,0 +1,27 @@
+<html>
+<body>
+
+<div id="output"></div>
+
+<script>
+// Your JSON-like data
+const data = {
+    variable1: "S",
+    variable2: "B"
+};
+
+// Convert JSON values into an array
+const arr = [data.variable1, data.variable2];
+
+// Display each value in HTML
+const container = document.getElementById("output");
+
+arr.forEach(value => {
+    const p = document.createElement("p");
+    p.textContent = value;
+    container.appendChild(p);
+});
+</script>
+
+</body>
+</html>

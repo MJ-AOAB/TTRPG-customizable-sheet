@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tabs Example</title>
+<title>Character sheet</title>
 
 <style>
 /* Style the tab */
@@ -62,15 +62,15 @@
 
 <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="openTab(event, 'Main')" id="defaultOpen">Main</button>
+  <button class="tablinks" onclick="openTab(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo</button>
 </div>
 
 <!-- Tab content -->
-<div id="London" class="tabcontent">
+<div id="Main" class="tabcontent">
   <span onclick="this.parentElement.style.display='none'">x</span>
-  <h3>London</h3>
+  <h3>Main</h3>
   <p>London is the capital city of England.</p>
 </div>
 
@@ -87,7 +87,7 @@
 </div>
 
 <script>
-function openCity(evt, cityName) {
+function openTab(evt, Tab) {
   var i, tabcontent, tablinks;
 
   // Hide all tab content
@@ -103,7 +103,7 @@ function openCity(evt, cityName) {
   }
 
   // Show selected tab
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(Tab).style.display = "block";
 
   // Add active class to clicked button
   evt.currentTarget.className += " active";
