@@ -1,16 +1,18 @@
 window.stats = {};
 window.globalBonuses = [];
 
-window.NON_STACKING_TYPES = ["morale", "luck", "armor", "shield", "natural", "Enatural", "dodge", "deflection"];
-window.STACKING_TYPES = ["competence", "enhancement", "untyped", "temp"];
+window.NON_STACKING_TYPES = ["morale", "luck", "armor", "shield", "natural", "Enatural", "enhancement", "deflection"];
+window.STACKING_TYPES = ["competence", "dodge", "untyped", "temp"];
 
-// Creation functions
+
 window.createStatic = function(name, value) {
-    stats[name] = { base: value };
+    stats[name] = { base: value
+        , categories:["Static"]
+     };
 };
 
-window.createAC = function(name, baseValue = 0, categories = []) {
-    stats[name] = {
+window.createAC = function( baseValue = 10, categories = []) {
+    stats["AC"] = {
         base: baseValue,
         categories,
         bonuses: {
@@ -27,6 +29,17 @@ window.createAC = function(name, baseValue = 0, categories = []) {
         }
     };
 };
+
+window.AbilityScore = function(name, value) {
+    let mod = (value-10)/2;
+    stats[name] = {
+        base:value,
+        modifier: mod,
+         categories:["AS"]
+        
+    }
+
+}
 
 window.createSave = function(name, baseValue, categories = []) {
     stats[name] = {
