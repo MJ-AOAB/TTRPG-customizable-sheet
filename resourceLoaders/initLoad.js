@@ -51,7 +51,17 @@ window.createSave = function(name, baseValue, categories = []) {
             luck: [],
             untyped: [],
             temp: []
+        },
+        Total(){
+            let total = this.base;
+
+
+            return total;
         }
+        // stats.AC.Total()   call like this
+        // stats.Fort.Total()
+        // stats.Stealth.Total()
+
     };
 };
 
