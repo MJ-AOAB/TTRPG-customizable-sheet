@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Character sheet</title>
 <link rel="stylesheet" href="loader.css">
-
 </head>
 
 <body>
@@ -12,27 +11,30 @@
 <!-- Tab links -->
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'Main')" id="defaultOpen">Main</button>
-  <button class="tablinks" onclick="openTab(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="openTab(event, 'Equipment')">Equipment</button>
+  <button class="tablinks" onclick="openTab(event, 'Battle')">Battle</button>
+   <button class="tablinks" onclick="openTab(event, 'Conditions')">Condtions</button>
 </div>
 
 <!-- Tab content -->
 <div id="Main" class="tabcontent">
   <span onclick="this.parentElement.style.display='none'">x</span>
-  <h3>Main</h3>
-  <p>London is the capital city of England.</p>
+  <div id="MainContent"></div>
 </div>
 
-<div id="Paris" class="tabcontent">
+<div id="Equipment" class="tabcontent">
   <span onclick="this.parentElement.style.display='none'">x</span>
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p>
+  <div id="equipContent"></div>
 </div>
 
-<div id="Tokyo" class="tabcontent">
+<div id="Battle" class="tabcontent">
   <span onclick="this.parentElement.style.display='none'">x</span>
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
+  <div id="battleContent"></div>
+</div>
+
+<div id="Conditions" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'">x</span>
+  <div id="conditionContent"></div>
 </div>
 
 <script>
@@ -56,6 +58,30 @@ function openTab(evt, Tab) {
 
   // Add active class to clicked button
   evt.currentTarget.className += " active";
+
+  // Load external HTML for each tab
+  if (Tab === "Main") {
+    fetch("/tabs/mainSheet.html")
+      .then(r => r.text())
+      .then(t => document.getElementById("MainContent").innerHTML = t);
+  }
+
+  if (Tab === "Equipment") {
+    fetch("/tabs/equipment.html")
+      .then(r => r.text())
+      .then(t => document.getElementById("equipContent").innerHTML = t);
+  }
+
+  if (Tab === "Battle") {
+    fetch("/tabs/battle.html")
+      .then(r => r.text())
+      .then(t => document.getElementById("battleContent").innerHTML = t);
+  }
+    if (Tab === "Conditions") {
+    fetch("/tabs/conditions.html")
+      .then(r => r.text())
+      .then(t => document.getElementById("conditionContent").innerHTML = t);
+  }
 }
 
 // Auto-open default tab
