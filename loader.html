@@ -7,6 +7,7 @@
 <script src="/CharacterSheets/data.js"></script>
 <script src="/resourceLoaders/initLoad.js"></script>
 <script src="/resourceLoaders/initCalc.js"></script>
+<script src="/tabs/mainSheet.js"></script>
 
 
 </head>
@@ -93,20 +94,8 @@ if (Tab === "Main") {
   }
 }
 
-// Auto-open default tab
-function renderMainSheet() {
-    const StaticList = document.getElementById("section-static");
 
-    for (let key in stats) {
-        const stat = stats[key];
 
-        if (stat.categories && stat.categories.includes("Static")) {
-            const display = document.createElement("p");
-            display.textContent = `${key}: ${stat.base}`;
-            StaticList.appendChild(display);
-        }
-    }
-}
 
 document.getElementById("defaultOpen").click();
 

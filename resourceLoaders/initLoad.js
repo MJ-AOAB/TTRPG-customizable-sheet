@@ -35,7 +35,7 @@ window.AbilityScore = function(name, value) {
     stats[name] = {
         base:value,
         modifier: mod,
-         categories:["AS"]
+        categories:["AS"]
         
     }
 

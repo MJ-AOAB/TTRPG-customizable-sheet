@@ -18,23 +18,5 @@
         </div>
     </body>
 
-    <script>
 
-const StaticList = document.getElementById("section-static");
-
-function renderMainSheet() {
-    const StaticList = document.getElementById("section-static");
-
-    for (let key in stats) {
-        const stat = stats[key];
-
-        if (stat.categories && stat.categories.includes("Static")) {
-            const display = document.createElement("p");
-            display.textContent = `${key}: ${stat.base}`;
-            StaticList.appendChild(display);
-        }
-    }
-}
-
-    </script>
 </html>
