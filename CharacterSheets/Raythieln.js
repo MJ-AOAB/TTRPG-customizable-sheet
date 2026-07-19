@@ -22,32 +22,32 @@ export const baseStats = [
   {
     name: "Str",
     value: 20,
-    categories: ["cat3", "cat4"]
+    categories: ["Str", "cat4"]
   },
     {
     name: "Dex",
     value: 20,
-    categories: ["cat3", "cat4"]
+    categories: ["Dex", "cat4"]
   },
     {
     name: "Con",
     value: 20,
-    categories: ["cat3", "cat4"]
+    categories: ["Con", "cat4"]
   },
     {
     name: "Int",
     value: 10,
-    categories: ["cat3", "cat4"]
+    categories: ["Int", "cat4"]
   },
       {
     name: "Wis",
     value: 24,
-    categories: ["cat3", "cat4"]
+    categories: ["Wis", "cat4"]
   },
       {
     name: "Cha",
     value: 7,
-    categories: ["cat3", "cat4"]
+    categories: ["Cha", "cat4"]
   },
 ];
 
@@ -66,7 +66,7 @@ export const baseSaves = [
         {
         name: "Will",
         value: 6,
-        categories: ["save", "Will"]
+        categories: ["Save", "Will"]
         },
 ]
                 
@@ -81,31 +81,31 @@ export const skillSetup = [
         name: "Appraise",
         ranks: 0,
         CS: true,
-        categories: ["Dex", "Skill"]
+        categories: ["int", "Skill"]
         },
         {
         name: "Bluff",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Cha", "Skill"]
         },
         {
         name: "Climb",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Str", "Skill"]
         },
         {
         name: "Craft(weapons)",
         ranks: 3,
         CS: true,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Diplomacy",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Cha", "Skill"]
         },
         {
         name: "Disable Device",
@@ -117,7 +117,7 @@ export const skillSetup = [
         name: "Disguise",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Stealth", "Skill"]
         },
         {
         name: "Escape Artist",
@@ -135,13 +135,13 @@ export const skillSetup = [
         name: "Handle Animal",
         ranks: 1,
         CS: true,
-        categories: ["Dex", "Skill"]
+        categories: ["Cha", "Skill"]
         },
         {
         name: "Heal",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Wis", "Skill"]
         },
         {
         name: "Intimidate",
@@ -153,67 +153,67 @@ export const skillSetup = [
         name: "Knowledge (Arcana)",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Knowledge(Dungeoneering)",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Knowledge(Engineering)",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Knowledge(Geography)",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Knowledge(History)",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Knowledge(local)",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Knowledge(nature)",
         ranks: 8,
         CS: true,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Knowledge(Nobility)",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Knowledge(Planes)",
         ranks: 3,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Knowledge(Religion)",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Linguistics",
         ranks: 11,
         CS: true,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name:"Perception",
@@ -243,7 +243,7 @@ export const skillSetup = [
         name: "Sense motive",
         ranks: 11,
         CS: true,
-        categories: ["Dex", "Skill"]
+        categories: ["Wis", "Skill"]
         },
         {
         name: "Sleight of hand",
@@ -255,7 +255,7 @@ export const skillSetup = [
         name: "Spellcraft",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Int", "Skill"]
         },
         {
         name: "Stealth",
@@ -267,19 +267,19 @@ export const skillSetup = [
         name: "Survival",
         ranks: 1,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Wis", "Skill"]
         },
         {
         name: "Swim",
         ranks: 10,
         CS: true,
-        categories: ["Dex", "Skill"]
+        categories: ["Str", "Skill"]
         },
         {
         name: "Use Magic Device",
         ranks: 0,
         CS: false,
-        categories: ["Dex", "Skill"]
+        categories: ["Cha", "Skill"]
         },
 
 
@@ -293,4 +293,4 @@ export const skillSetup = [
 
 // internal[]
 
-//actions     [action,[resources,cost],description,[buff,amount,duration]]
+//actions     [name,action,[resources,cost],description,[buff,amount,duration]]

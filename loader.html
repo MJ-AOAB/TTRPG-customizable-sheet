@@ -1,3 +1,66 @@
+<!DOCTYPE html>
 <html>
-    <p>Hi</p>
+<head>
+<meta charset="UTF-8">
+<title>Character sheet</title>
+<link rel="stylesheet" href="loader.css">
+
+</head>
+
+<body>
+
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Main')" id="defaultOpen">Main</button>
+  <button class="tablinks" onclick="openTab(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<!-- Tab content -->
+<div id="Main" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'">x</span>
+  <h3>Main</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'">x</span>
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'">x</span>
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<script>
+function openTab(evt, Tab) {
+  var i, tabcontent, tablinks;
+
+  // Hide all tab content
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove "active" class from all tab buttons
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show selected tab
+  document.getElementById(Tab).style.display = "block";
+
+  // Add active class to clicked button
+  evt.currentTarget.className += " active";
+}
+
+// Auto-open default tab
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
 </html>
